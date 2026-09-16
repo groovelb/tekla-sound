@@ -1,0 +1,6 @@
+interface:
+  display_name: "Project Planning"
+  short_description: "Plan in gates, then apply approved design tokens"
+  default_prompt: "Use $project-planning to create the requested planning phase, stop at each approval gate, and after visual-direction approval apply only the token rows explicitly marked apply."
+policy:
+  allow_implicit_invocation: false

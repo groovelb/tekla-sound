@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analyze Site Design with Aside"
+  short_description: "Rapid site structure and visual analysis via Aside"
+  default_prompt: "Use $analyze-site-design-with-aside for a rapid bounded analysis that pairs minimal screenshots with site-structure evidence, then synthesize one evidence-backed design report."
