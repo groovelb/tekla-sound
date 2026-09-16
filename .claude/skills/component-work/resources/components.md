@@ -129,3 +129,56 @@ Vibe Dictionary 텍소노미 v0.4 기반 분류. 번호는 텍소노미 카테�
 - BrandDocumentSection: 번호·라벨·블록을 조합하는 리포트 섹션 (`components/brand-documentation/BrandDocumentSection.jsx`)
 - BrandBlockRenderer: prose, list, table, evidence, card, typography, code 블록 라우터 (`components/brand-documentation/BrandBlockRenderer.jsx`)
 - BrandDocumentReview: `stage-review.json` 기반 조정 체크포인트 (`components/brand-documentation/BrandDocumentReview.jsx`)
+
+---
+
+## TEKLA SOUND 랜딩 모듈 (2026-09)
+
+단일 파일이던 `TeklaSoundLanding.jsx` 를 섹션·템플릿·컴포넌트로 나눈 결과. 브랜드 토큰은 `components/tekla-sound/teklaSoundTokens.js`, 카피·이미지·스펙은 `components/tekla-sound/teklaSoundContent.js` 가 단일 원천이다. Storybook: `Custom Component/TEKLA SOUND/*`, `Template/TEKLA SOUND/*`, `Section/TEKLA SOUND/*`, `Page/TEKLA SOUND Landing`.
+
+### 1. Typography
+- Eyebrow: 넓은 자간의 대문자 소제목 (`components/typography/Eyebrow.jsx`)
+- DisplayHeading: 가늘고 큰 디스플레이 헤드라인. 줄 배열을 block 으로 쌓음 (`components/typography/DisplayHeading.jsx`)
+- LineBreakText: 줄 배열을 br 로 이어 붙인 본문 (`components/typography/LineBreakText.jsx`)
+
+### 2. Container
+- SectionContainer: 최대 폭 제한 없이 좌우 여백만 주는 섹션 컨테이너 (`components/container/SectionContainer.jsx`)
+
+### 4. Media
+- SlideDots: 슬라이드쇼 점 인디케이터 (`components/media/SlideDots.jsx`)
+
+### 5. Data Display
+- SpecCard: 라벨·값·부연의 스펙 셀 (`components/data-display/SpecCard.jsx`)
+
+### 6. In-page Navigation
+- ValueRow: 번호·제목·설명·+ 의 선택형 행 (`components/in-page-navigation/ValueRow.jsx`)
+- ValueAccordion: ValueRow 목록. 한 번에 한 행만 선택 (`components/in-page-navigation/ValueAccordion.jsx`)
+
+### 7. Input & Control
+- UnderlineButton: 밑줄만 있는 텍스트 버튼 (`components/input/UnderlineButton.jsx`)
+- PillButton: 반투명 유리 + 테라코타 외곽선 알약 CTA (`components/input/PillButton.jsx`)
+- SegmentedToggle: 알약 트랙 세그먼트 토글 (ON/OFF) (`components/input/SegmentedToggle.jsx`)
+- SampleTabs: 번호 붙은 작은 텍스트 탭 (`components/input/SampleTabs.jsx`)
+- SwatchPicker: 컬러 칩 선택기. hover/focus 선택, 이탈 시 복귀 (`components/input/SwatchPicker.jsx`)
+
+### Template
+- SplitFeature: 이미지 + 아이브로우·헤드라인·본문·액션 좌우 분할 템플릿. imageSide 로 이미지 위치 (`components/templates/SplitFeature.jsx`)
+
+### Section (`components/tekla-sound/`)
+- TeklaSiteHeader: 히어로 위에 겹치는 헤더 (워드마크 + 밑줄 링크)
+- TeklaHeroSection: 풀스크린 히어로 (사진 + 그라디언트 + 대형 헤드라인)
+- TeklaValueSection: 가치 3행 아코디언 + TeklaValueVisual (행별 비주얼)
+- TeklaListeningDemoSection: 브랜드 스토리 + 제품 청음 데모 (useAudioSampler 훅, SegmentedToggle, SampleTabs)
+- TeklaAtmosphereSlideshow: 분위기 사진 교차 페이드 슬라이드쇼 (SlideDots)
+- TeklaColorwaySection: 컬러 시스템 (제품 사진 + SwatchPicker)
+- TeklaProductShowcase: 제품 3종 SplitFeature 연속 배치
+- TeklaMaterialDetailSection: 소재 디테일 SplitFeature
+- TeklaSpecSection: 스펙 그리드 (SpecCard 3열) + 각주
+- TeklaListeningCtaSection: 청음 예약 CTA (PillButton)
+
+### Page
+- TeklaSoundLanding: 위 섹션을 원본 순서대로 조립한 랜딩 (`components/tekla-sound/TeklaSoundLanding.jsx`)
+
+### Hook / Data
+- useAudioSampler: 숨김 audio 로 샘플 재생·전환·페이드아웃 (`components/tekla-sound/useAudioSampler.js`)
+- teklaSoundTokens / teklaSoundContent: 브랜드 토큰과 콘텐츠 단일 원천
